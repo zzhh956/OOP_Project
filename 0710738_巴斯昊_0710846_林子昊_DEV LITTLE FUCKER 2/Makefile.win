@@ -1,0 +1,67 @@
+# Project: Little Fucker 2
+# Makefile created by Dev-C++ 5.11
+
+CPP      = g++.exe
+CC       = gcc.exe
+WINDRES  = windres.exe
+OBJ      = main.o characters/davis.o characters/deep.o characters/dennis.o characters/firen.o characters/freeze.o characters/hit2.o characters/information.o characters/john.o characters/julian.o characters/menucontroll.o characters/pick.o characters/woody.o characters/printback.o
+LINKOBJ  = main.o characters/davis.o characters/deep.o characters/dennis.o characters/firen.o characters/freeze.o characters/hit2.o characters/information.o characters/john.o characters/julian.o characters/menucontroll.o characters/pick.o characters/woody.o characters/printback.o
+LIBS     = -L"C:/Program Files (x86)/Dev-Cpp/MinGW64/lib32" -L"C:/Program Files (x86)/Dev-Cpp/MinGW64/x86_64-w64-mingw32/lib32" -static-libgcc -lconio -lbgi -lgdi32 -lcomdlg32 -luuid -loleaut32 -lole32 -m32
+INCS     = -I"C:/Program Files (x86)/Dev-Cpp/MinGW64/include" -I"C:/Program Files (x86)/Dev-Cpp/MinGW64/x86_64-w64-mingw32/include" -I"C:/Program Files (x86)/Dev-Cpp/MinGW64/lib/gcc/x86_64-w64-mingw32/4.9.2/include"
+CXXINCS  = -I"C:/Program Files (x86)/Dev-Cpp/MinGW64/include" -I"C:/Program Files (x86)/Dev-Cpp/MinGW64/x86_64-w64-mingw32/include" -I"C:/Program Files (x86)/Dev-Cpp/MinGW64/lib/gcc/x86_64-w64-mingw32/4.9.2/include" -I"C:/Program Files (x86)/Dev-Cpp/MinGW64/lib/gcc/x86_64-w64-mingw32/4.9.2/include/c++"
+BIN      = menu.exe
+CXXFLAGS = $(CXXINCS) -m32
+CFLAGS   = $(INCS) -m32
+RM       = rm.exe -f
+
+.PHONY: all all-before all-after clean clean-custom
+
+all: all-before $(BIN) all-after
+
+clean: clean-custom
+	${RM} $(OBJ) $(BIN)
+
+$(BIN): $(OBJ)
+	$(CPP) $(LINKOBJ) -o $(BIN) $(LIBS)
+
+main.o: main.cpp
+	$(CPP) -c main.cpp -o main.o $(CXXFLAGS)
+
+characters/davis.o: characters/davis.cpp
+	$(CPP) -c characters/davis.cpp -o characters/davis.o $(CXXFLAGS)
+
+characters/deep.o: characters/deep.cpp
+	$(CPP) -c characters/deep.cpp -o characters/deep.o $(CXXFLAGS)
+
+characters/dennis.o: characters/dennis.cpp
+	$(CPP) -c characters/dennis.cpp -o characters/dennis.o $(CXXFLAGS)
+
+characters/firen.o: characters/firen.cpp
+	$(CPP) -c characters/firen.cpp -o characters/firen.o $(CXXFLAGS)
+
+characters/freeze.o: characters/freeze.cpp
+	$(CPP) -c characters/freeze.cpp -o characters/freeze.o $(CXXFLAGS)
+
+characters/hit2.o: characters/hit2.cpp
+	$(CPP) -c characters/hit2.cpp -o characters/hit2.o $(CXXFLAGS)
+
+characters/information.o: characters/information.cpp
+	$(CPP) -c characters/information.cpp -o characters/information.o $(CXXFLAGS)
+
+characters/john.o: characters/john.cpp
+	$(CPP) -c characters/john.cpp -o characters/john.o $(CXXFLAGS)
+
+characters/julian.o: characters/julian.cpp
+	$(CPP) -c characters/julian.cpp -o characters/julian.o $(CXXFLAGS)
+
+characters/menucontroll.o: characters/menucontroll.cpp
+	$(CPP) -c characters/menucontroll.cpp -o characters/menucontroll.o $(CXXFLAGS)
+
+characters/pick.o: characters/pick.cpp
+	$(CPP) -c characters/pick.cpp -o characters/pick.o $(CXXFLAGS)
+
+characters/woody.o: characters/woody.cpp
+	$(CPP) -c characters/woody.cpp -o characters/woody.o $(CXXFLAGS)
+
+characters/printback.o: characters/printback.cpp
+	$(CPP) -c characters/printback.cpp -o characters/printback.o $(CXXFLAGS)
